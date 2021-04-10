@@ -2,15 +2,26 @@ package model;
 
 public class Person {
 	private String id;
-	private String typeId;
-	public Person(String id1,String type) {
+	private TypeDocuments typeId;
+	public Person(String id1,String typeId) {
 		id = id1;
-		typeId = type;
+		this.typeId=TypeDocuments.valueOf(typeId.toUpperCase());
 	}
-	public String getTypeId() {
-		return typeId;
-	}
+	
 	public String getId() {
 		return id;
 	}
+
+	public TypeDocuments getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(String typeId) {
+		this.typeId=TypeDocuments.valueOf(typeId.toUpperCase());
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
 }
